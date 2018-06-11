@@ -10,9 +10,17 @@ echo "<div class='Top'>";
 						
 						echo "<button><a href='userdt.php'>Previous Page</a></button><br /><br />";
  echo "</div> <br/>";
+ 
  $cx=$_SESSION['id'];
-echo "<div class='Top' align='right'><font color='Crimson'size='4'><u>Welcome Admin</u></font></div>"."<div align=right><font color='Crimson'size='4'>".$_SESSION['id']."</font></div>"."<br><br>";
-echo "<div align=right><font color='Crimson'size='4'><u>Click here to <a href='logout1.php' title='Logout'>Logout</u></font></a></div>";
+
+ echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
+
 echo "<h2 style='text-align:center'><u>UPDATE USER DETAILS</u></h2>";
 		
 @$upp=$_GET['id'];
