@@ -1,0 +1,29 @@
+
+h2 {
+    color:white;text-align: center;
+}
+div{text-align:center;}
+
+centre{
+  width: 200px;
+  display: block;
+  background-color:red;
+  margin-right: auto;
+}
+body {
+  font-family: Arial;
+  background-color:#cab577;
+}
+
+top-container {
+  background-color:purple;
+  padding: 15px;
+  text-align: center;
+}
+modal-heading h2{
+			color:#e3eaa7;
+		}
+
+modal-content{
+			background-color:#b5e7a0;
+		}
