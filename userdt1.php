@@ -10,27 +10,19 @@ echo "<div class='Top'>";
 						
 						echo "<button><a href='userdt.php'>Previous Page</a></button><br /><br />";
  echo "</div> <br/>";
- 
  $cx=$_SESSION['id'];
-
  echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
-
 			<font color='Crimson' size='4'>
-
 				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
-
 						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
-
 echo "<h2 style='text-align:center'><u>UPDATE USER DETAILS</u></h2>";
-		
-@$upp=$_GET['id'];
-@$l=$_POST['id'];
-@$b=$_POST['uname'];
-@$c=$_POST['fname'];
-@$d=$_POST['lname'];
-@$e=$_POST['email'];
-@$f=$_POST['password'];
-
+$upp=$_GET['id'];
+$l=$_POST['id'];
+$b=$_POST['uname'];
+$c=$_POST['fname'];
+$d=$_POST['lname'];
+$e=$_POST['email'];
+$f=$_POST['password'];
 $s="select * from test where id='$upp'";
 $run=mysqli_query($con,$s);
 while($row= mysqli_fetch_array($run)){
@@ -40,7 +32,6 @@ $b=$row['uname'];
    $d=$row['lname'];
    $e=$row['email'];
    $f=$row['password'];
-
   echo "<table style='width:100%' border='1' 'rowspan='10'  bgcolor='#999999'>
 <tr>";
 			    echo "<th>ID</th>
@@ -48,7 +39,6 @@ $b=$row['uname'];
               <th>FIRST_NAME(update)</th>
                 <th>LAST_NAME(update)</th>
                 <th>EMAIL</th><th>PASSWORD</th>
-				
 </tr>";
 echo "<tr>";				
 	  $l=$row['id'];
@@ -79,7 +69,8 @@ h1{
 	}
 }	 
 textarea {
-			background-color :white;}
+	background-color :white;
+	}
 </style>
 </head>
 <body>
