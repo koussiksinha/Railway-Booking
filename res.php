@@ -33,7 +33,6 @@ echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-ali
 			<font color='Crimson' size='4'>
 				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
 						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
-echo "<h2 style='text-align:center'><u>DELETE USER</u></h2>";
 ?>
 <!DOCTYPE html5>
 <html>
