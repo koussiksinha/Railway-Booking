@@ -1,5 +1,5 @@
 <style>
-th {padding:10px;}
+th {padding:5px;}
 </style>
 <?php
 session_start(); 
@@ -8,7 +8,18 @@ session_start();
 <?php
 include 'timedate.php'; 
 include 'connect1.php';$cx=$_SESSION['id'];
-echo "<br/>";
+echo "<br/><div align='center'>
+<marquee 
+direction='left'
+loop='15'
+scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='70%'
+     	 >
+<font bgcolor='white'>Welcome To&nbsp;&nbsp;Admin Page</font>
+</marquee>
+</div>";
 
 echo "<div class='left'>";
   echo "<a href='adm.php' class='active'><button><font color='Crimson'size='4'>Admin Login Page</font></button></a>
@@ -16,9 +27,13 @@ echo "<div class='left'>";
 <font color='Crimson'size='4'><a href='resvdt.php' class='inactive'><button><font color='Crimson'size='4'>Previous Page</font></button></a>";
 echo "</div>";
 
-echo "<div align='right'><font color='Crimson'size='4'><u>Welcome Admin</u>"." "." ".$_SESSION['id']."</font></div>";
-echo "<a href='logout1.php' title='Logout'>
-<div align='right'><font color='Crimson'size='4'>Logout</font></div></a>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
 
 echo "<br><br>";
 
@@ -30,7 +45,7 @@ $s="Select * from rest where PNR='$upt'";
 
 if($result=mysqli_query($con,$s)){
 
-echo "<table style='width:100%' border='1' 'rowspan='10'  bgcolor='MEDIUMSPRINGGREEN'>";
+echo "<table style='width:100%' border='1' 'rowspan='10'  bgcolor='#45B39D'>";
 
 echo "<tr>";
 			echo "<u><b>Passenger Details</b></u><br><br>";
@@ -77,7 +92,7 @@ else {
 <html>
 <head>
 <style>
-body {color: purple;background-color:#FF9966; }
+body {color: purple;background-color:SILVER; }
 label,p{padding:10px;}	 
 </style>
 </head>
@@ -90,62 +105,62 @@ label,p{padding:10px;}
 <table CELLPADDING="4" cellspacing="10"></table>
 <form name="form" action ="" method="POST" >
 
-<table align="left" width="20%" border="0" background-color:"#a79e84"></table>
+<table align="left" width="20%" border="0" background-color:"#45B39D"></table>
 <hr>
 <div class="header">
-<th colspan="2"><h2 align="center"><strong><ul><font color="Crimson">Delete Passenger</font></ul></strong></h2>
+<th colspan="2"><h2 align="center"><strong><ul><font color="#5D6D7E">Delete Passenger</font></ul></strong></h2>
 </div>
 
 <fieldset>
 
 <p>
-<font color="red"><label for="PNR"><u>PNR</u></label></font>
-<input type="Text" name="pnr" value="<?php echo $upt;?>" readonly>
+<font color="#5D6D7E"><label for="PNR"><u>PNR</u></label></font>
+<input type="Text" name="pnr" style="background-color:#D5D8DC; color:#1B4F72;"  value="<?php echo $upt;?>" readonly>
 </p>
 
 <p>
-<font color="red"><label for="TRAIN NUMBER"><u>TRAIN NUMBER</u></label></font>
-<input type="Text" value="<?php echo $a;?>" readonly>
+<font color="#5D6D7E"><label for="TRAIN NUMBER"><u>TRAIN NUMBER</u></label></font>
+<input type="Text" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $a;?>" readonly>
 </p>
 
 <p>
-<font color="red"><label for="TRAIN NAME"><u>TRAIN NAME</u></label></font>
-<input type="Text" value="<?php echo $b;?>" readonly>
+<font color="#5D6D7E"><label for="TRAIN NAME"><u>TRAIN NAME</u></label></font>
+<input type="Text" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $b;?>" readonly>
 </p>
 
 <p>
-<font color="red" size="5"><label for="Name"><u>NAME</u></label></font>
-<input type="Text" name="na" value="<?php echo $c;?>">
+<font color="#5D6D7E" size="5"><label for="Name"><u>NAME</u></label></font>
+<input type="Text" name="na" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $c;?>">
 </p>
 
 <p>
-<font color="red" size="5"><label for="AGE"><u>AGE</u></label></font>
-<input type="number"  name="age" value="<?php echo $d;?>">
+<font color="#5D6D7E" size="5"><label for="AGE"><u>AGE</u></label></font>
+<input type="number"  name="age" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $d;?>">
 </p>
 
 <p>
-<font color="red" size="5"><label for="DOJ"><u>DATE OF JOURNEY</u></label></font> 
-<input type="date"  name="date" value="<?php echo $e;?>" >
+<font color="#5D6D7E" size="5"><label for="DOJ"><u>DATE OF JOURNEY</u></label></font> 
+<input type="date"  name="date" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $e;?>" >
 </p>
 
 <p>
-<font color="red"><label for="SEAT"><u>SEAT</u></label></font> 
-<input type="text" value="<?php echo $f;?>" readonly>
+<font color="#5D6D7E" size="5"><label for="SEAT"><u>SEAT</u></label></font> 
+<input type="text" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $f;?>" readonly>
 </p>
 
 <p>
-<font color="red" size="5"><label for="SOURCE"><u>SOURCE</u></label></font> 
-<input type="text" name="src" value="<?php echo $g;?>">
+<font color="#5D6D7E" size="5"><label for="SOURCE"><u>SOURCE</u></label></font> 
+<input type="text" name="src" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $g;?>">
 </p>
 
 <p>
-<font color="red" size="5"><label for="DESTINATION"><u>DESTINATION</u></label></font> 
-<input type="text" name="des" value="<?php echo $h;?>">
+<font color="#5D6D7E" size="5"><label for="DESTINATION"><u>DESTINATION</u></label></font> 
+<input type="text" name="des" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $h;?>">
 </p>
 
 <p>
-<font color="red"><label for="CLASS RESERVED"><u>CLASS RESERVED</u></label></font> 
-<input type="text" value="<?php echo $i;?>" readonly>
+<font color="#5D6D7E"><label for="CLASS RESERVED"><u>CLASS RESERVED</u></label></font> 
+<input type="text" style="background-color:#D5D8DC; color:#1B4F72;" value="<?php echo $i;?>" readonly>
 </p>
 <input type="submit" name="submit" value="DELETE"> 
 </fieldset>
@@ -156,7 +171,10 @@ label,p{padding:10px;}
 include 'connect1.php';
 if (isset($_POST['submit'])) {
     $pnr = $_POST['pnr'];
-   $sql= "Delete from rest  WHERE PNR='$pnr'";
+    //$g = $_POST['src'];
+	 //$dd = $_POST['des'];
+    //$udcontent = $_POST['udcontent'];
+$sql= "Delete from rest  WHERE PNR='$pnr'";
 $d=mysqli_query($con,$sql);
 if($d){
     echo "Records were deleted successfully.<a href='resvdt.php'>Link</a>";
