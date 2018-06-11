@@ -120,30 +120,22 @@ h1{
 </html>
 <?php
 include 'connect1.php';
-if(isset($_POST['submit'])){
-@$c=$_POST['fname'];
-@$d=$_POST['lname'];
-$sql= "DELETE from test where id='$l'";
-$d=mysqli_query($con,$sql);
-if($d){
+	if(isset($_POST['submit'])){
+			$c=$_POST['fname'];
+				$d=$_POST['lname'];
+	$sql= "DELETE from test where id='$l'";
+				$d=mysqli_query($con,$sql);
+		if($d){
 	
-    echo "Records were deleted successfully";
-echo "<div align='center'><font size='6'>Redirecting in 2 secs.....</font></div>";
-	header("refresh:2; url=userdt.php");	
+    			echo "Records were deleted successfully";
+				echo "<div align='center'><font size='6'>Redirecting in 2 secs.....</font></div>";
+					header("refresh:2; url=userdt.php");	
 
-}
+			}
  else {
     echo "ERROR: Could not able to execute";
 echo "<div align='center'><font size='6'>Redirecting you back.....</font></div>";
 	header("refresh:2; url=userdt.php");
 	}
 }
-?>					 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
+?>
