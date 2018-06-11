@@ -1,25 +1,56 @@
 <style>
 body {color: purple;background-color:#FA8072; }
 th {padding: 6px;}
-
+.footer {
+	position:fixed;
+   left: 0;
+   bottom:-15;
+   width: 100%;
+   background-color:#018786;
+   color:#E3E4FA;
+   text-align: center;
+}
 </style>
 
 <?php session_start(); ?>
 
 			<?php
 			$cx=$_SESSION['id'];
-			include 'timedate.php'; include 'connect1.php';
-			
+echo"<font color='Crimson'>";include 'timedate.php'; echo"</font>"; 
+			include 'connect1.php';
+echo "<div align='center'>
+<marquee 
+ 
+     direction='left'
+     loop='15'
+     scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='50%'
+     background-color:'#018786'
+   color:'#E3E4FA'
+	 font-size='16px'
+     >
+<font color='#E3E4FA' background-color:'#018786';>Welcome To&nbsp;&nbsp;Admin Page</font>
+</marquee>
+</div>";			
 echo "<br><br><div class='Top'>
 			<button><a href='adm.php' class='active'>Admin Login Page</a></button>
-			&nbsp;&nbsp;	
-				<button><a href='adm1.php' class='inactive'>Admin Page</a></button>";
-						
-						 echo "</div> <br/>";
-echo "<font color='Crimson'size='4'><u><div class='Top' style='float:right;'>Welcome Admin</u></font>"."&nbsp;"."&nbsp;".$_SESSION['id']."</div>";
-echo "<div align=right><font color='Crimson'size='4'><u>Click here to</u>&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</font></a></div>";
-echo "<h2 style='text-align:center'><u>VIEW USER DETAILS</u></h2>";
+							&nbsp;&nbsp;	
+									<button><a href='adm1.php' class='inactive'>Admin Page</a></button>";
+												echo "</div> <br/>";				 						 								 
+echo "<font color='Crimson' size='4'><u>
+
+<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+Welcome Admin</u></font>"."&nbsp;"."&nbsp;".$_SESSION['id']."
+
+&nbsp;&nbsp;<br><br><a href='logout1.php' title='Logout'><font color='Crimson'size='4'>Logout</font></a></div>";
+
+echo "<h2><div align='center'><u><font color='Crimson'>VIEW USER DETAILS</font></u></div></h2>";
+
 echo "<br><br>";
+
 ?>
 <!----------------------PAGINATION USED ----------------->
 <!doctype html>
@@ -112,6 +143,14 @@ echo "<input type='password' style='background-color:powderblue;' value='$f' >";
                 <input type="submit" class="button" name="but_prev" value="Previous">
                 <input type="submit" class="button" name="but_next" value="Next">
             </div>
+			<div class="footer">
+  <p><marquee direction="right"
+     loop="15"
+     scrollamount="2"
+     scrolldelay="2"
+     behavior="alternate"
+     width="100%">This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
+     </div>
         </form>
     </div>
     </body>
