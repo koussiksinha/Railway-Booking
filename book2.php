@@ -1,10 +1,29 @@
 <?php 
-include 'timedate.php';
 session_start(); 
-$cx=$_SESSION['id'];
-echo "<div align='right'><u><i><font size='5'>Welcome</i></u>"." "." "." ".$_SESSION['id'].
-"</font></div>";
 include 'connect1.php';
+include 'timedate.php';
+$cx=$_SESSION['id'];
+echo "<br>
+<div align='center'>
+<marquee 
+direction='left'
+loop='15'
+scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='70%'
+     	 >
+<font bgcolor='white'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+</marquee>
+</div>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+<font color='crimson' size='4'>
+
+<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
+
 ?>
 <style>
 body{color: purple;background-color:aqua;}
@@ -19,9 +38,8 @@ th{padding:6px;}
    text-align: center;
 }
 </style><br />
-<div align="right">
-<font size="4"><a href="form.php">Home</a></font><br /><br />
-<font size="4"><a href="logout.php" align="right">Logout</a></font>
+<div align="left">
+<font size="4"><a href="form.php">Home Page</a></font>
 </div><br />
 
 <?php
@@ -85,19 +103,4 @@ text-align="center"
      width="100%"
      bgcolor="aqua"  
   >This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
-</div>
-
-
-
-
-
-
-
-
-
-
-                 
-
-
-
- 
+	</div>
