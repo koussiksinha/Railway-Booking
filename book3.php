@@ -1,9 +1,9 @@
 <?php
-session_start();echo "<font color='#FAD7A0'>";			
-
+session_start();
+echo "<font color='#FAD7A0'>";			
 include 'timedate.php';
-
 echo "</font>";
+include 'connect1.php';
 echo "<div align='center'>
 <marquee 
  text-align='center'
@@ -12,7 +12,7 @@ echo "<div align='center'>
      scrollamount='1'
      scrolldelay='2'
      behavior='alternate'
-     width='100%'
+     width='70%'
      bgcolor='#4B7E7D' 
 	      >
 <font color='#FAD7A0'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
@@ -20,18 +20,14 @@ echo "<div align='center'>
 </div>";
 $cx=$_SESSION['id'];
 
-echo "<div align='right'><u><i>
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
 
-<font size='5' color='#FAD7A0'>Welcome</i></u>"." "." "." ".$_SESSION['id'].
+			<font color='#FAD7A0' size='4'>
 
-"</font></div><br><br>
+				<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
 
-<div align='right'>
-
-<a href='logout.php'><font size='5' color='#FAD7A0'>Logout</font></a>
-
-</div>
-<a href='form1.php'><font size='5' color='#FAD7A0'>Home Page</font></a><br><br>";
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
+echo "<a href='form1.php'><font size='5' color='#FAD7A0'>Home Page</font></a><br><br>";
 ?>
 <style>
 body{color: purple;background-color:#4B7E7D;}
@@ -47,9 +43,6 @@ th{padding:6px;}
 }
 </style>
 <?php
-
-include 'connect1.php';
-  //$a=$_GET['id'];
 echo "<form name='f1'  action='book3.php' method='POST' ><body><table>
 <tr>
 <font color='#FAD7A0'>ENTER PNR:</font>
@@ -61,11 +54,8 @@ echo "<form name='f1'  action='book3.php' method='POST' ><body><table>
 <td><input type='submit' name='submit' Value='Get Tickets'></td>
 </tr>
 </form></body></table><br /><br /><br />";
-
 $fa="";
-
-@$pnr=$_POST['pnr'];
-
+$pnr=$_POST['pnr'];
 if(isset($_POST['submit']) && !empty($_POST['pnr'])){
 $result1=mysqli_query($con,"SELECT * FROM rest where PNR='$pnr'");
 	$duplicate=mysqli_num_rows($result1);
@@ -135,7 +125,5 @@ text-align="center"
      width="100%"
      bgcolor="#4B7E7D"  
   >
-  
 This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
      </div>
-
