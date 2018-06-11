@@ -158,13 +158,4 @@ if($d){
     echo "ERROR: Could not able to execute";
 }
 }
-?>			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
-			 
+?>
