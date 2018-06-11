@@ -50,11 +50,8 @@ $b=$row['uname'];
                 <th>EMAIL</th><th>PASSWORD</th>
 				
 </tr>";
-
 echo "<tr>";				
-
 	  $l=$row['id'];
-
 	  $ff=$row['password'];
 	  echo "<th>" .$row['id']. "</th>" ;
 	  echo "<th>" .$b. "</th>";
@@ -68,8 +65,6 @@ echo "<tr>";
 	  echo "<th>"."<input type='password' value='$f'>"."</th>";
 echo "</tr>";
 	  	}
-
-	  
 echo "</table>";  
 ?>
 <!DOCTYPE html>
@@ -77,7 +72,6 @@ echo "</table>";
 <head>
 <style>
 body {color: purple;background-color:#FA8072; }
-
 h1{
 	color:Red ;
 	font- size :25px;
@@ -90,53 +84,42 @@ textarea {
 </head>
 <body>
 <br><br/>
-
 <tr>
 <td></td>
 <td colspan="2" rowspan="2"></td>
 </tr>
 <table CELLPADDING="4" cellspacing="10" background="TEAL"></table>
 <form name="form" action="userdt1.php?=$upp" method="POST" >
-
 <table align="left" width="20%" border="0"></table>
-
 <div class="header">
 <th colspan="2"><h2 align="center" ><strong><u>UPDATE FIRST / LAST NAME</u></strong></h2>
 </div>
 <fieldset>
-
 <p>
 <font color="PURPLE"><label for="User Name"><u>ID</u></label></font>
 <input type="Text" name="id" style="background-color:powderblue;" value="<?php echo $l;?>" readonly>
 </p>
-
 <p>
 <font color="PURPLE"><label for="User Name"><u>User Name</u></label></font>
 <input type="Text" name="uname" style="background-color:powderblue;" value="<?php echo $b;?>" readonly>
 </p>
-
 <p>
 <font color="PURPLE"><label for="First Name"><u>First name (update)</u></label></font>
 <input type="Text" name="fname" style="background-color:powderblue;" value="<?php echo $c;?>">
 </p>
-
 <p>
 <font color="PURPLE"><label for="Last Name"><u> Last Name (update)</u></label></font>
 <input type="Text" name="lname" style="background-color:powderblue;" value="<?php echo $d;?>">
 </p>
-
 <p>
 <font color="PURPLE"><label for="email"><u>Email</u></label></font>
 <input type="email" name="email" style="background-color:powderblue;" value="<?php echo $e;?>" readonly>
 </p>
-
 <p>
 <font color="PURPLE"><label for="password"><u>Password</u></label></font> 
 <input type="password" name="password" style="background-color:powderblue;" value="<?php echo $ff;?>" readonly >
 </p>
-
 <td><td><input type="submit" name="update" value="UPDATE"></td></td>
-
 </fieldset>
 </form>
 </body>
@@ -146,13 +129,10 @@ include 'connect1.php';
 if(isset($_POST['update'])){
 @$c=$_POST['fname'];
 @$d=$_POST['lname'];
-
 $sql= "UPDATE test set fname='$c',lname='$d' where id='$l'";
 $d=mysqli_query($con,$sql);
 if($d){
-	
     echo "<script>alert('Records were updated successfully')</script>";
-
 }
  else {
     echo "ERROR: Could not able to execute";
