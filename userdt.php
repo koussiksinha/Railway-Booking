@@ -11,17 +11,14 @@ th {padding: 6px;}
    text-align: center;
 }
 </style>
-
 <?php session_start(); ?>
-
 			<?php
 			$cx=$_SESSION['id'];
 echo"<font color='Crimson'>";include 'timedate.php'; echo"</font>"; 
 			include 'connect1.php';
 echo "<div align='center'>
 <marquee 
- 
-     direction='left'
+      direction='left'
      loop='15'
      scrollamount='2'
      scrolldelay='2'
@@ -40,36 +37,28 @@ echo "<br><br><div class='Top'>
 									<button><a href='adm1.php' class='inactive'>Admin Page</a></button>";
 												echo "</div> <br/>";				 						 								 
 echo "<font color='Crimson' size='4'><u>
-
 <div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
-
 Welcome Admin</u></font>"."&nbsp;"."&nbsp;".$_SESSION['id']."
-
 &nbsp;&nbsp;<br><br><a href='logout1.php' title='Logout'><font color='Crimson'size='4'>Logout</font></a></div>";
 
 echo "<h2><div align='center'><u><font color='Crimson'>VIEW USER DETAILS</font></u></div></h2>";
-
 echo "<br><br>";
-
 ?>
 <!----------------------PAGINATION USED ----------------->
 <!doctype html>
 <html>
     <head>
-        
-        <?php
+      <?php
             $rowperpage = 5;
             $row = 0;
-
-            if(isset($_POST['but_prev'])){
+	            if(isset($_POST['but_prev'])){
                 $row = $_POST['row'];
                 $row -= $rowperpage;
                 if( $row < 0 ){
                     $row = 0;
                 }
             }
-            
-            if(isset($_POST['but_next'])){
+                        if(isset($_POST['but_next'])){
                 $row = $_POST['row'];
                 $allcount = $_POST['allcount'];
 
@@ -84,8 +73,7 @@ echo "<br><br>";
     <body>
     <div id="content">
         <table width="100%" id="table" border="1">
-            <tr class="tr_header">
-                
+            <tr class="tr_header">          
   <th>ID</th>
   <th>UNAME</th>
   <th>FNAME </th>
