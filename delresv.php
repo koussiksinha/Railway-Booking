@@ -156,10 +156,7 @@ label,p{padding:10px;}
 include 'connect1.php';
 if (isset($_POST['submit'])) {
     $pnr = $_POST['pnr'];
-    //$g = $_POST['src'];
-	 //$dd = $_POST['des'];
-    //$udcontent = $_POST['udcontent'];
-$sql= "Delete from rest  WHERE PNR='$pnr'";
+   $sql= "Delete from rest  WHERE PNR='$pnr'";
 $d=mysqli_query($con,$sql);
 if($d){
     echo "Records were deleted successfully.<a href='resvdt.php'>Link</a>";
