@@ -9,21 +9,23 @@ echo "<div align='center'>
 <marquee 
  
      direction='left'
-     loop='7'
+     loop='15'
      scrollamount='2'
      scrolldelay='2'
      behavior='alternate'
-     width='100%'
+     width='50%'
      colour='green'
 	 font-size='16px'
      >
-<font color='#008080'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+<font color='#008080'>Welcome To&nbsp;&nbsp;Admin Page</font>
 </marquee>
 </div>";
 include 'connect1.php';
 echo "<br><br>";
 $cx=$_SESSION['id'];
-echo "<div align='right'><font color='#008080'size='4'><u>Welcome Admin</u>"."&nbsp;"."&nbsp;".$_SESSION['id']."</font></div>"."<br>";			
+echo "<div style='position: absolute; top: 0; right: 20px; width: -40px; text-align:right;'>
+<font color='#008080' size='4'><u>Welcome Admin</u>"."&nbsp;"."&nbsp;".$_SESSION['id']."</font>"."<br><br>
+<a href='logout1.php' title='Logout' ><font color='#008080' size= '4'>Logout</font></a></div>";			
 ?>
 <!DOCTYPE html>
 <html>
@@ -101,7 +103,7 @@ body {
 </head>
 <body>
 <div align="right">
-<a href="logout1.php" title="Logout"><font color="#008080" size= "4">Logout</font></a>
+
 </div>
 
 		<div class="topnav" id="myTopnav">
@@ -138,8 +140,8 @@ function myFunction() {
 
 <div class="footer">
   <p><marquee direction="right"
-     loop="7"
-     scrollamount="1"
+     loop="15"
+     scrollamount="2"
      scrolldelay="2"
      behavior="alternate"
      width="100%">This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
