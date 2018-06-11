@@ -1,11 +1,7 @@
 <style>
-
 body,table{color: purple;background-color:#b5e7a0;}
-
 td,tr,th{padding:6px;}
-
 </style>
-
 <ul class="navbar">
 				<li><a href="form1.php"><font color='purple'>Home page</a></font></li>
 						<li><a href="tickets.php"><font color='purple'>Check Tickets</a></font></li>
@@ -17,13 +13,9 @@ session_start();
 ?>
 <?php 
 echo "<font color='purple'>";
-
 include 'timedate.php';
-
 echo "</font>";
-
 include 'connect1.php';
-
 $cx=$_SESSION['id'];echo "<br>
 <div align='center'>
 <marquee 
@@ -37,18 +29,12 @@ scrollamount='2'
 <font bgcolor='white'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
 </marquee>
 </div>";
-
 echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
-
 			<font color='Crimson' size='4'>
-
 				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
-
 						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
 echo "<h2 style='text-align:center'><u>DELETE USER</u></h2>";
-
 ?>
-
 <!DOCTYPE html5>
 <html>
    <head>
