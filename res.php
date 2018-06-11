@@ -9,8 +9,7 @@ td,tr,th{padding:6px;}
 <ul class="navbar">
 				<li><a href="form1.php"><font color='purple'>Home page</a></font></li>
 						<li><a href="tickets.php"><font color='purple'>Check Tickets</a></font></li>
-								<li><a href="pswdupdte.php"><font color='purple'>Reset Password</a></font></li>
-										<li><a href="logout.php"><font color='purple'>Logout</a></font></li>
+								<li><a href="pswdupdte.php"><font color='purple'>Reset Password</a></font></li>								
 </ul>
 
 <?php
@@ -25,9 +24,28 @@ echo "</font>";
 
 include 'connect1.php';
 
-$cx=$_SESSION['id'];echo "<br>";
+$cx=$_SESSION['id'];echo "<br>
+<div align='center'>
+<marquee 
+direction='left'
+loop='15'
+scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='70%'
+     	 >
+<font bgcolor='white'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+</marquee>
+</div>";
 
-echo "<div align='right'><i><u><font size='6'>Welcome</u></i>"." "." "." "." ".$_SESSION['id']."</div></font>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
+echo "<h2 style='text-align:center'><u>DELETE USER</u></h2>";
 
 ?>
 
@@ -129,5 +147,3 @@ $res=mysqli_query($con,$sql);
      </div>
 </body>
 </html>
-
-
