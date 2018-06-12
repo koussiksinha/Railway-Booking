@@ -40,8 +40,8 @@ body {
 </head>
 <body>
 <ul class="navbar">
-<li><a href="form.php">Home</a></li><br />
-<li><a href="logout.php" align="right">Logout</a></li>
+<li><a href="form.php">Home Page</a></li><br />
+<li><a href="login.php" align="right">User Name Login</a><br /><br /></li><li><a href="emaillogin.php" align="right">Email Login</a></li>
 </ul>
 <table >
 <form name= "f2"  action="pswdupdte.php"  method="POST" >
@@ -86,14 +86,14 @@ scrollamount="2"
 </body>
 </head>
 </html>
+
 <!------------------HTML ENDS -------------!>
 <?php
 include 'connect1.php';
-$a=mysqli_real_escape_string($con,$_POST['uname']);
-$b=mysqli_real_escape_string($con,$_POST['psw1']);
-$c=mysqli_real_escape_string($con,$_POST['psw']);
-$d=mysqli_real_escape_string($con,$_POST['cpsw']);
-
+@$a=mysqli_real_escape_string($con,$_POST['uname']);
+@$b=mysqli_real_escape_string($con,$_POST['psw1']);
+@$c=mysqli_real_escape_string($con,$_POST['psw']);
+@$d=mysqli_real_escape_string($con,$_POST['cpsw']);
 $cx=$_SESSION['id']=$a;
 
 if(isset($_POST['submit']) &&  !empty($_POST['uname']) && !empty($_POST['psw1'])&& !empty($_POST['psw'])&& !empty($_POST['cpsw']))
@@ -103,8 +103,9 @@ if(isset($_POST['submit']) &&  !empty($_POST['uname']) && !empty($_POST['psw1'])
 
 			<font color='Crimson' size='4'>
 
-				<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br></font></div>";
-					
+				<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+		<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout.php' title='Logout'>Logout</a></font></div>";			
+	
 	/* FETCH DATA WITH MYSQLI COMMAND. */
 	
 $sql=mysqli_query($con,"select * from test where uname='$a' ");
@@ -122,7 +123,7 @@ if($c==$d){
 $u=	mysqli_query($con,"UPDATE test SET password='$c' WHERE uname='$a'");
 echo "<br>";
 
-echo ("<u>Success.Password Change</u>.<br>.<a href='login.php'><u><font color='Blue' size='4'>
+echo ("<u>Success</u>.Password Change.<br>.<a href='login.php'><u><font color='Blue' size='4'>
 Login Now</font></u></a>"); echo "<br>";
 $s=mysqli_query($con,"select * from test where uname='$a' ");
 
@@ -156,18 +157,13 @@ echo "<fieldset>
 
 </p>
 </fieldset>";
-
-
-
-
 }	
 else{
 	echo "<u><font color='Blue' size='4'> New & Confirm Passwords.Don't Match</font></u>";
 }		
 }
 else {
-	
-	echo "<u><font color='Blue' size='4'>Old Password Incorrect!</font></u>";
+		echo "<u><font color='Blue' size='4'>Old Password Incorrect!</font></u>";
 }	
 }
-?>
+?>	
