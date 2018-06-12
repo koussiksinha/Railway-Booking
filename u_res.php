@@ -123,9 +123,9 @@ $res_check=mysqli_num_rows($sql);
 
 if($res_check>0){
 $row=mysqli_fetch_assoc($sql);
-@$aa=$row['fname'];
-@$bb=$row['uname'];
-@$cc=$row['lname'];
+$aa=$row['fname'];
+$bb=$row['uname'];
+$cc=$row['lname'];
 echo "<div class='header'>
 <b><legend><u><i>Display Info</i></u></legend></b>
 </div>";
