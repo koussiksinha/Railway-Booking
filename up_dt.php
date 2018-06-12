@@ -2,7 +2,25 @@
 session_start(); 
 ?>
 <?php
-include 'connect1.php';include 'timedate.php';
+include 'connect1.php';
+echo "<font color='red'>";
+include 'timedate.php';
+echo "</font>";
+echo "<div align='center'>
+<marquee 
+ text-align='center'
+     direction='left'
+     loop='15'
+     scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='50%'
+     
+	      >
+<font color='Red'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+</marquee>
+</div>";
+@$cx=$_SESSION['id'];
 @$upp=$_GET['id'];
 @$l=$_POST['id'];
 @$b=$_POST['uname'];
@@ -22,7 +40,6 @@ $b=$row['uname'];
    $f=$row['password'];
    }
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -64,19 +81,14 @@ body {
 .footer {
 	position: fixed;
    left: 0;
-   bottom:-25;
+   bottom:-15;
    width: 100%;
-   background-color: #f44336;
-   color: white;
+   color: Red;
    text-align: center;
 }	 
 </style>
 </head>
 <body>
-<?php 
-echo "<br><br>";$cx=$_SESSION['id'];
-echo "<u>Welcome"." "." "." "." ".$_SESSION['id']."</u>"."<br><br>";
-?>
 <tr>
 <td colspan="2" rowspan="2"></td>
 </tr>
@@ -84,8 +96,9 @@ echo "<u>Welcome"." "." "." "." ".$_SESSION['id']."</u>"."<br><br>";
 <form name="form" action ="up_dt.php?id=<?php echo $upp;?> " method="POST" >
 
 <table>
+<br /><br /><br /><br />
 <fieldset>
-<legend><font size="4"><strong><u>UPDATE YOUR NAME && PASSWORD</u></strong></font></legend>
+<legend><font size="4" color="Red"><strong><u>UPDATE YOUR NAME && PASSWORD</u></strong></font></legend>
 </tr>
 
 <p>
@@ -129,18 +142,33 @@ echo "<u>Welcome"." "." "." "." ".$_SESSION['id']."</u>"."<br><br>";
 </div>
 </p>
 <p>
-
-<td><td><input type="submit" name="update" value="UPDATE"></td></td>
+<td><td><input type="submit" name="update" value="Update"></td></td>
 <td><td><button><a href="login.php">Continue Login</a></button></td></td>
 </fieldset>
-
 </table>
 </form>
 </body>
-
 </html>	
 <?php
-include 'connect1.php';
+echo "<br>
+<div class='footer'>
+					<p><marquee 
+							text-align='center'
+									direction='left'
+												loop='7'
+														scrollamount='1'
+											scrolldelay='2'
+									behavior='alternate'
+						 width='100%'
+	 
+	      >All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
+     </div>";
+
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome </u>"."&nbsp;".$_SESSION['id']."<br><br>";
 if(isset($_POST['update'])){
 @$c=$_POST['fname'];
 @$d=$_POST['lname'];
