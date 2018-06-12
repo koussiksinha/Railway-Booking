@@ -19,7 +19,7 @@ th{padding:6px;}
      scrollamount="1"
      scrolldelay="2"
      behavior="alternate"
-     width="100%"
+     width="70%"
      bgcolor="aqua" 
 	      >
 <font color="Blue">Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
@@ -27,14 +27,18 @@ th{padding:6px;}
 </div>
 <ul class="navbar">
 <li><a href="form.php">Home</a></li><br /><li><a href="res.php">Train Enquiry</a></li><br />
-<li><a href="logout.php">Logout</a></li>
 </ul>
 <?php session_start(); ?>
 <?php
 include 'connect1.php';
 include 'timedate.php';echo "<br><br>";$cx=$_SESSION['id'];
-echo "<font size='4'><div align='right' style='float: right;'><u><i>Welcome</u>" ." "." ".$_SESSION['id'].
-"</i></font></div>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
 echo "<br><br>";
 
 $al=$_GET['id'];
@@ -74,11 +78,9 @@ alert("Age must be within 5-125 yrs");
 	
      return false; 
 } 
-
 else {
 	return true;
 }
-
 }
 </script>
 <style>
@@ -95,9 +97,8 @@ table, th{
 			<tr>
 			<th>S.NO</th>
 			<th>Train Number</th>
-			<th>Train Name</th>
-			
-							 <th>NAME</th>
+			  <th>Train Name</th>
+			      <th>NAME</th>
 			                 <th><b>AGE</b></th>
 							<th>DOJ</th>
 							<th>SELECT BERTH</th>
@@ -188,10 +189,6 @@ table, th{
 <tr>		
 <th>LOGIN&nbsp;&nbsp;</th> 
 <th><input type="submit" name="submit" value="SUBMIT"></th>
-
-
-<th>CANCEL</td>
-<th><input type="reset" name="RESET" value="CANCEL"></th>
 </tr>
 
 <input type="hidden" name="id" >
