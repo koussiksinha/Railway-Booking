@@ -1,5 +1,6 @@
 <?php
-session_start(); 
+session_start();
+include 'connect1.php'; 
 ?>
 <html>
    <head>
@@ -14,22 +15,21 @@ session_start();
    left: 0;
    bottom: 0;
    width: 100%;
-   background-color: #f44336;
-   color: white;
+   background-color:lightblue;
+   color: Red;
    text-align: center;
 }
 </style>
 </head>
 <ul class="navbar">
-<li><a href="form.php">Home</a></li><br />
-<li><a href="logout.php">LOGOUT</a></li>
+<li><a href="form.php">Home Page</a></li><br />
 </ul>
 
 <table width = "100%" border = "0">
    <tr>
    <td colspan = "2" bgcolor="lightblue">
    <center>
-   <h4 ><u><i>TICKET SEARCH</u></i></h4>
+   <h4 ><u><i><font color="MAROON">TICKET SEARCH</font></u></i></h4>
    </center>
    </td>
    </tr>
@@ -37,20 +37,44 @@ session_start();
 <body> 
 <td align="center" bgcolor="lightblue"><u><i>SEARCH BY PNR</i></u></td>
 <td align= "left" bgcolor = "lightblue"><input type= "text" name="pnr" placeholder="ENTER PNR NO."></td>
-<tr>
+<tr><br /><br />
 <td align= "center" bgcolor = "AQUA"><u>SUBMIT</u></td>
 <input type= "hidden" name="uname">
 <td align= "left" bgcolor = "AQUA"><font ="6"><input type= "Submit" name="Submit" value="SUBMIT"></font></td>
 </tr>
 <div class="footer">
-  <p>This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</p>
+  <marquee 
+direction="left"
+loop="15"
+scrollamount="2"
+     scrolldelay='2'
+     behavior="alternate"
+     width="100%"
+     	 >
+<p>This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</p>
+</marquee>
      </div>
 <?php
-
 $cx=$_SESSION['id'];
-echo "<br>";
-echo "<i><u><font size='6'>Welcome</font></u></i>"." "." "." "." ".$_SESSION['id'];
-include 'connect1.php';
+
+echo "
+<div align='center'>
+<marquee direction='left'
+loop='15' scrollamount='2'
+scrolldelay='2'
+behavior='alternate'
+width='100%'
+>
+<font color='crimson'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+</marquee>
+</div>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome Admin</u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br>
+
+						<u>Click here to</u>&nbsp;&nbsp;&nbsp;<a href='logout1.php' title='Logout'>Logout</a></font></div>";
 @$Pnr=$_POST['pnr'];
 if(isset($_POST['Submit'])){
 if(!empty($_POST['pnr'])){
@@ -89,4 +113,3 @@ echo "<tr><th>PNR</th><th>TRAIN NO.</th><th>TRAIN NAME</th><th>NAME</th><th>AGE<
 </table>
 </head>
 </html>
-   
