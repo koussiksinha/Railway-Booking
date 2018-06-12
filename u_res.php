@@ -1,12 +1,25 @@
 <?php 
 session_start();
-echo "<br><font color='white'>";
+echo "<br><font color='crimson'>";
 include 'timedate.php'; 
 echo "</font>";
+include 'connect1.php';
+echo "<br>
+<div align='center'>
+<marquee 
+direction='left'
+loop='15'
+scrollamount='2'
+     scrolldelay='2'
+     behavior='alternate'
+     width='70%'
+     	 >
+<font color='crimson'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
+</marquee>
+</div>";
 ?>
 <style>
 body,table{color: purple;background-color:MEDIUMAQUAMARINE;}
-
 td,tr,th{padding:6px;}
 .header {
 	width: 50%;
@@ -31,16 +44,14 @@ wrapper { min-height: 100%;position: relative;
    bottom:-10;
    width: 100%;
    background-color:MEDIUMAQUAMARINE;
-   color: white;
+   color:crimson;
    text-align: center;
 }
 </style>
 <?php
-echo "<div align='right'><ul class='navbar'>";
-echo "<a href='form.php'>Home</a><br /><br /><a href='logout.php'>LOGOUT</a>";
+echo "<div align='left'><ul class='navbar'>";
+echo "<a href='form.php'>Home</a><br /><br /><a href='logout.php'>Logout</a>";
 echo "</ul></div>";
-include 'timedate.php';
-include 'connect1.php';
 ?>
 <!DOCTYPE HTML5>
 <html>
@@ -56,24 +67,20 @@ var a=document.f1.email.value;
 var b=document.f1.password.value;
 
 if(a==""||b==""){
-   
-   alert("Empty fields are not allowed"); 
-   
-   return false;   
+     alert("Empty fields are not allowed"); 
+      return false;   
 } 
 else{  
      return true;  
 	} 
 }
 </script>
-
 <body>
 <table align="center">
 <form name= "f1"  action=""  method="POST" onSUBMIT="return validateform()">
 <div class="header">
 <b><legend><u><i>Get User_Name</i></u></legend></b>
 </div>
-
 <tr>
 <td>Email:</td>
 <td><input type="email" name="email" placeholder="Enter Email"  ></td>
@@ -90,7 +97,6 @@ else{
 </tr>
 </form>
 </table>
-
 <div class="footer">
 <p><marquee>This is a dummy project. |All Rights Reserved. |@CopyRight 2018-2019</marquee></p>
  </div>
@@ -101,11 +107,11 @@ if(isset($_POST['submit']) && isset($_POST['email']) || isset($_POST['password']
 	
 if(!empty($_POST['email'])  && !empty($_POST['password'])){	
 
-@$a=$_POST['email'];$aa=stripcslashes($a);$aa=mysqli_real_escape_string($con,$a);
+$a=$_POST['email'];$aa=stripcslashes($a);$aa=mysqli_real_escape_string($con,$a);
 
-@$b=$_POST['password'];$bb=stripcslashes($b);$bb=mysqli_real_escape_string($con,$b);  
+$b=$_POST['password'];$bb=stripcslashes($b);$bb=mysqli_real_escape_string($con,$b);  
 
-@$aa=$_POST['fname']; $cc=stripcslashes($aa);$cc=mysqli_real_escape_string($con,$aa);
+$aa=$_POST['fname']; $cc=stripcslashes($aa);$cc=mysqli_real_escape_string($con,$aa);
 
 $_SESSION['email']=$a;
 
@@ -123,20 +129,19 @@ $row=mysqli_fetch_assoc($sql);
 echo "<div class='header'>
 <b><legend><u><i>Display Info</i></u></legend></b>
 </div>";
-echo "<div align='right'>Welcome"." "." ".$_SESSION['email']."</div>";
-echo "<fieldset>";
+echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+<font color='crimson'>Welcome"." "." ".$_SESSION['email']."</div></font>
+<fieldset>";
 
-echo  "<p><font color= '#9400D3'>First Name</font></p>";
-echo"<input type='text' value='$aa' readonly >";
-				echo"<p><font color= '#9400D3'>Last Name</font></p>";
-				echo"<input type='text' value='$cc' readonly>";
-			echo "<p><font color= '#9400D3'>User_Name</font></p>";
-			echo	"<input type='text' value='$bb' readonly>";
-			echo	"<p><font color= '#9400D3'>Email</font></p>
-			<input type='text' value='$a' readonly >
-			<a href='login.php'> Login Now </a></fieldset>
-			<br><br>";   
-
+echo "<p><font color= '#9400D3'>First Name</font></p>
+<input type='text' value='$aa' readonly >
+<p><font color= '#9400D3'>Last Name</font></p>";
+echo "<input type='text' value='$cc' readonly>
+<p><font color= '#9400D3'>User_Name</font></p>
+<input type='text' value='$bb' readonly>
+<p><font color= '#9400D3'>Email</font></p>
+<input type='text' value='$a' readonly ><a href='login.php'> Login Now </a></fieldset>
+<br><br>";   
 }
 else{
 echo "<br><br><font color='Purple'><u><i>SORRY!! WE DON'T HAVE YOUR RECORDS.</u></i></font><br /><br />";
@@ -144,11 +149,5 @@ echo "<br><br><font color='Purple'><u><i>SORRY!! WE DON'T HAVE YOUR RECORDS.</u>
 }
 }
 ?>
-
 </body>
 </html>
-
-
-
-
-
