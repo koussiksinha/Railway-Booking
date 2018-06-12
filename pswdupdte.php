@@ -68,7 +68,7 @@ body {
 </p><br/><br/>
 
 <font color= "Blue">SUBMIT</font><input type="submit" name ="submit" value="UPDATE PASSWORD">
-<font color= "Blue">CANCEL</font><input type="RESET" name="reset" value="CANCEL">
+
 </fieldset>
 <div class="footer">
   <marquee 
@@ -86,18 +86,14 @@ scrollamount="2"
 </body>
 </head>
 </html>
-
 <!------------------HTML ENDS -------------!>
-<!------------------HTML ENDS -------------!>
-<!------------------HTML ENDS -------------!>
-<!------------------HTML ENDS -------------!>
-
 <?php
 include 'connect1.php';
 $a=mysqli_real_escape_string($con,$_POST['uname']);
 $b=mysqli_real_escape_string($con,$_POST['psw1']);
 $c=mysqli_real_escape_string($con,$_POST['psw']);
 $d=mysqli_real_escape_string($con,$_POST['cpsw']);
+
 $cx=$_SESSION['id']=$a;
 
 if(isset($_POST['submit']) &&  !empty($_POST['uname']) && !empty($_POST['psw1'])&& !empty($_POST['psw'])&& !empty($_POST['cpsw']))
@@ -121,15 +117,12 @@ if($b==$f ){
 	
 if($c==$d){
 	
-	echo "<u>Success</u>"; 
-	echo "<br>";
-	
 	/* UPDATING PASSWORDS WITH MYSQLI COMMAND. */
 	
-$u=	mysqli_query($con,"UPDATE test SET password='$c' , cpsw='$d' WHERE uname='$a'");
+$u=	mysqli_query($con,"UPDATE test SET password='$c' WHERE uname='$a'");
 echo "<br>";
 
-echo ("<u>Password Change</u>.<br>.<a href='login.php'><u><font color='Blue' size='4'>
+echo ("<u>Success.Password Change</u>.<br>.<a href='login.php'><u><font color='Blue' size='4'>
 Login Now</font></u></a>"); echo "<br>";
 $s=mysqli_query($con,"select * from test where uname='$a' ");
 
@@ -163,6 +156,9 @@ echo "<fieldset>
 
 </p>
 </fieldset>";
+
+
+
 
 }	
 else{
