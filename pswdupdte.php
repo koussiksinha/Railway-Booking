@@ -52,6 +52,7 @@ body {
  <font color= "Blue">Enter User Name</font>
 <input type ="text" name="uname">
 </p>
+
 <p>
  <font color= "Blue">Enter Old Password</font>
 <input type ="password" name="psw1">
@@ -63,7 +64,9 @@ body {
 <p>
 <font color= "Blue">Re-Type Password</font>
 <input type ="password" name="cpsw">
+
 </p><br/><br/>
+
 <font color= "Blue">SUBMIT</font><input type="submit" name ="submit" value="UPDATE PASSWORD">
 <font color= "Blue">CANCEL</font><input type="RESET" name="reset" value="CANCEL">
 </fieldset>
@@ -85,24 +88,37 @@ scrollamount="2"
 </html>
 
 <!------------------HTML ENDS -------------!>
+<!------------------HTML ENDS -------------!>
+<!------------------HTML ENDS -------------!>
+<!------------------HTML ENDS -------------!>
+
 <?php
 include 'connect1.php';
-@$a=mysqli_real_escape_string($con,$_POST['uname']);
-@$b=mysqli_real_escape_string($con,$_POST['psw1']);
-@$c=mysqli_real_escape_string($con,$_POST['psw']);
-@$d=mysqli_real_escape_string($con,$_POST['cpsw']);
+$a=mysqli_real_escape_string($con,$_POST['uname']);
+$b=mysqli_real_escape_string($con,$_POST['psw1']);
+$c=mysqli_real_escape_string($con,$_POST['psw']);
+$d=mysqli_real_escape_string($con,$_POST['cpsw']);
 $cx=$_SESSION['id']=$a;
 
 if(isset($_POST['submit']) &&  !empty($_POST['uname']) && !empty($_POST['psw1'])&& !empty($_POST['psw'])&& !empty($_POST['cpsw']))
-{	
-	echo "<br>";
-	echo "<u><font color='Blue' size='6'>Welcome !"." "." ".$_SESSION['id']."</font></u><br><br>";
+{
+	
+	echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome </u>"."&nbsp;"."&nbsp;"."&nbsp;".$_SESSION['id']."<br><br></font></div>";
+					
 	/* FETCH DATA WITH MYSQLI COMMAND. */
 	
 $sql=mysqli_query($con,"select * from test where uname='$a' ");
+
 $row=mysqli_fetch_assoc($sql);
+
 $e=$row['uname'];$f=$row['password'];
-if($b==$f ){	
+
+if($b==$f ){
+	
 if($c==$d){
 	
 	echo "<u>Success</u>"; 
@@ -112,14 +128,17 @@ if($c==$d){
 	
 $u=	mysqli_query($con,"UPDATE test SET password='$c' , cpsw='$d' WHERE uname='$a'");
 echo "<br>";
+
 echo ("<u>Password Change</u>.<br>.<a href='login.php'><u><font color='Blue' size='4'>
 Login Now</font></u></a>"); echo "<br>";
 $s=mysqli_query($con,"select * from test where uname='$a' ");
+
 $row=mysqli_fetch_assoc($s);
 $a=$row['uname'];$f=$row['password'];
 $cx=$row['fname'];$dx=$row['lname'];$ex=$row['email'];
 		
-	/* FETCH DATA WITH MYSQLI COMMAND. */
+		/* FETCH DATA WITH MYSQLI COMMAND. */
+		
 echo "<fieldset>
 <legend><u><font color= 'Brown'>Your Details</font></u></legend>
 <p>
@@ -141,8 +160,10 @@ echo "<fieldset>
  <font color= 'Blue'> New Password</font>
 <input type ='password' value='$f'>
 </p>
+
 </p>
 </fieldset>";
+
 }	
 else{
 	echo "<u><font color='Blue' size='4'> New & Confirm Passwords.Don't Match</font></u>";
