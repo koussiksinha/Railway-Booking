@@ -92,9 +92,6 @@ else{
 <tr>
 <td>SUBMIT <input type="submit" name ="submit" value="SUBMIT"  ></td><br/><br />
 </tr>
-<tr>
-<td>CANCEL<input type="RESET" name="reset" value="CANCEL"></td> </br/>
-</tr>
 </form>
 </table>
 <div class="footer">
@@ -127,8 +124,11 @@ $aa=$row['fname'];
 $bb=$row['uname'];
 $cc=$row['lname'];
 echo "<div class='header'>
+
 <b><legend><u><i>Display Info</i></u></legend></b>
+
 </div>";
+	
 echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
 <font color='crimson'>Welcome"." "." ".$_SESSION['email']."</div></font>
 <fieldset>";
