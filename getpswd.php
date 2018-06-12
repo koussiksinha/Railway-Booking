@@ -1,9 +1,7 @@
 <?php 
 session_start();
 echo "<font color='purple'>";
-
 include 'timedate.php';
-
 echo "</font>"; echo "<br><br><br>";
 echo "<div align='center'>
 <marquee 
@@ -13,7 +11,7 @@ echo "<div align='center'>
      scrollamount='1'
      scrolldelay='2'
      behavior='alternate'
-     width='100%'
+     width='70%'
      bgcolor='MEDIUMAQUAMARINE' 
 	      >
 <font color='#800000'>Welcome To&nbsp;&nbsp;E-Ticketing Website</font>
@@ -33,9 +31,9 @@ echo "<div align='center'>
 </head>
 <body>
 <ul class="navbar">
-			<li><a href="form.php">Home</a></li><br />
-				<li><a href="login.php">Login Now</a></li><br />
-						<li><a href="logout.php">Logout</a></li>
+			<li><a href="form.php">Home Page</a></li><br />
+				<li><a href="login.php">User Name Login </a></li><br />
+						<li><a href="emaillogin.php">Email Login</a></li>
 </ul>
 	<table align="left"><font color="crimson"></align></font>
 <div class="header">
@@ -55,8 +53,8 @@ echo "<div align='center'>
 <Font color="DARKMAGENTA">UserName:</font>
 			<input class="w3-input w3-animate-input" style="width:10%" type="text" name="uname" required>
 
-<Font color="DARKMAGENTA">Submit:</font>
-			<input type="Submit" name="Submit" value="SUBMIT">
+
+			<input type="Submit" name="Submit" value="LOGIN">
 </div>
 </form>
 		<div class="footer">
@@ -78,7 +76,11 @@ echo "<div align='center'>
 
 include 'connect1.php';
 
-@$a=$_POST['email'];@$b=$_POST['uname'];
+$a=$_POST['email'];
+
+$b=$_POST['uname'];
+
+$cx=$_SESSION['id']=$b;
 
 if(isset($_POST['Submit']) && !empty($_POST['email']) && !empty($_POST['uname'])){
 
@@ -107,7 +109,14 @@ echo "</table>";
 				$a=$row['uname'];$b=$row['email'];$c=$row['password'];$d=$row['fname'];$e=$row['lname'];	
 
 				echo "<fieldset>";
- 	
+ 	echo "<div style='position: absolute; top: 0; right: 0px; width: -40px; text-align:right;'>
+
+			<font color='Crimson' size='4'>
+
+				<u>Welcome </u>"."&nbsp;".$_SESSION['id']."<br><br>
+
+			<a href='logout.php' title='Logout'>Logout</a></font></div>";
+	
 	echo "First Name<input type='text' value='$d' readonly>";
  
  echo "<br><br>";echo "Last Name<input type='text' value='$e' readonly>";
@@ -118,19 +127,11 @@ echo "</table>";
  
  echo "Your Email&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type='text' value='$b' readonly><br><br>";
  
- echo "Your Password<input type='text' value='$c' readonly><br><br>"; 
- 
+ echo "Your Password<input type='text' value='$c' readonly><br><br>";
+  
  echo "</fieldset>";
 }
 }
 }
 echo "</table>";	
 ?>
-
- 
-
-
-
-
-
-
